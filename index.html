@@ -1,93 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Agency Name</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Network Media Inc.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0b1220;
+  color:white;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,23,42,.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  opacity:.85;
+}
+
+nav a:hover{
+  color:#00c3ff;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  background:url('https://paragsuri05-ai.github.io/Networkmedia/images/hero.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* ================= SECTION ================= */
+.section{
+  padding:120px 10%;
+  text-align:center;
+}
+
+.section.dark{
+  background:#0f172a;
+}
+
+h2{
+  font-size:38px;
+  margin-bottom:25px;
+}
+
+p{
+  max-width:850px;
+  margin:auto;
+  opacity:.85;
+}
+
+/* =====================================================
+   SERVICES SPLIT LAYOUT
+===================================================== */
+.services-split{
+  display:flex;
+  gap:40px;
+  margin-top:60px;
+  padding:40px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(6px);
+}
+
+/* LEFT TABS */
+.services-tabs{
+  width:320px;
+  flex-shrink:0;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* TAB CARD */
+.tab{
+  padding:18px 22px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.05); /* subtle dark */
+  border:1px solid rgba(255,255,255,0.15);
+  cursor:pointer;
+  transition:.35s;
+  color:#e2e8f0;
+  font-weight:500;
+  font-size:15px;
+}
+
+/* Hover Effect */
+.tab:hover{
+  transform:translateX(6px);
+  border-color:#00c3ff;
+  box-shadow:0 0 12px rgba(0,195,255,0.2);
+}
+
+/* Active Tab - subtle highlight */
+.tab.active{
+  background:rgba(255,255,255,0.12); /* slightly lighter */
+  border-color:#00c3ff; /* subtle glow */
+  color:white;
+  font-weight:600;
+  box-shadow:0 0 15px rgba(0,195,255,0.25);
+}
+
+/* RIGHT CONTENT CARD */
+.services-content{
+  flex:1;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:18px;
+  padding:45px;
+  text-align:left;
+  transition:all 0.3s ease;
+}
+
+.content{
+  display:none;
+}
+
+.content.active{
+  display:block;
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 28px;
+  background:linear-gradient(45deg,#00c3ff,#0088ff);
+  color:black;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
+
+/* ================= CONTACT ================= */
+.contact-box{
+  margin-top:20px;
+  font-size:17px;
+  opacity:.9;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#050a14;
+  text-align:center;
+  padding:25px;
+  opacity:.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .services-split{
+    flex-direction:column;
+  }
+
+  .services-tabs,
+  .services-content{
+    width:100%;
+  }
+}
+
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="logo">YourAgency</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav>
+  <strong>Network Media Inc.</strong>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">What We Do</a></li>
+    <li><a href="#reach">Reach</a></li>
+  </ul>
+</nav>
 
-<!-- HERO -->
-<section class="hero" style="background-image: url('images/hero.jpg');">
-  <div class="hero-content">
-    <h1>Your eCommerce Growth Partner</h1>
-    <p>We help brands scale globally with powerful strategies, data, and retail media expertise.</p>
-    <a href="services.html" class="btn">Explore Services</a>
+<!-- ================= HERO ================= -->
+<section id="home" class="hero"></section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>
+    We help brands scale smarter with marketplace management,
+    performance marketing, and deep business analytics.
+    Our mission is to accelerate your growth with data-driven decisions.
+  </p>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="section dark">
+  <h2>What We Do</h2>
+
+  <p style="max-width:750px; margin:0 auto 50px auto; opacity:.85;">
+    We leverage our capabilities and technology to design, market, distribute and accelerate brands globally. 
+    We bring niche knowledge and global perspective with hands-on support to win in competitive markets.
+  </p>
+
+  <div class="services-split">
+
+    <!-- LEFT TABS -->
+    <div class="services-tabs">
+      <div class="tab active" data-tab="t1">📦 Marketplace Management</div>
+      <div class="tab" data-tab="t2">📈 Digital & Performance Marketing</div>
+      <div class="tab" data-tab="t3">🎨 Strategy & Design</div>
+      <div class="tab" data-tab="t4">📊 Business Analysis</div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="services-content">
+      <div class="content active" id="t1">
+        <h3>Marketplace Management</h3>
+        <p>Manage listings, inventory, and daily operations across Amazon, Flipkart, Walmart, Myntra, Nykaa, and other marketplaces to maximize reach and sales.</p>
+      </div>
+
+      <div class="content" id="t2">
+        <h3>Digital & Performance Marketing</h3>
+        <p>Data-driven ads, SEO, and social media campaigns on Google, Meta, and other channels to grow brand visibility and conversions.</p>
+      </div>
+
+      <div class="content" id="t3">
+        <h3>Strategy & Design</h3>
+        <p>Branding, UI/UX, and growth strategies that align with business goals to create a stronger market presence.</p>
+      </div>
+
+      <div class="content" id="t4">
+        <h3>Business Analysis</h3>
+        <p>Analytics, reporting, and competitor tracking to unlock growth opportunities and optimize performance.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- SERVICES PREVIEW -->
-<section class="section services-overview">
-  <h2>Our Core Services</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Global Expansion</h3>
-      <p>Take your brand to new international marketplaces with operational expertise.</p>
-    </div>
-    <div class="card">
-      <h3>Retail Media</h3>
-      <p>Certified retail media campaigns to boost visibility and conversions online.</p>
-    </div>
-    <div class="card">
-      <h3>Data & Technology</h3>
-      <p>Leverage analytics and automation for smarter eCommerce decisions.</p>
-    </div>
+<!-- ================= CONTACT ================= -->
+<section id="reach" class="section">
+  <h2>Let's Start a Partnership</h2>
+
+  <div class="contact-box">
+    📞 +91 9711660117<br>
+    📧 network.media@hotmail.com
   </div>
+
+  <a href="mailto:network.media@hotmail.com" class="btn">Contact Now</a>
 </section>
 
-<!-- CLIENT LOGOS -->
-<section class="section clients">
-  <h2>Our Clients</h2>
-  <div class="client-logos">
-    <img src="images/clients/client1.png" alt="Client 1">
-    <img src="images/clients/client2.png" alt="Client 2">
-    <img src="images/clients/client3.png" alt="Client 3">
-    <img src="images/clients/client4.png" alt="Client 4">
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testimonials">
-  <h2>What Our Clients Say</h2>
-  <div class="grid">
-    <div class="testimonial-card">
-      <img src="images/testimonial1.jpg" alt="Client testimonial">
-      <blockquote>“They helped us streamline our Amazon operations and grow 10x.”</blockquote>
-      <p class="author">— Happy Client</p>
-    </div>
-    <div class="testimonial-card">
-      <img src="images/testimonial2.jpg" alt="Client testimonial">
-      <blockquote>“Professional & results-driven team that transformed our eCommerce.”</blockquote>
-      <p class="author">— Another Client</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section call-to-action">
-  <h2>Ready to Elevate Your eCommerce?</h2>
-  <a href="contact.html" class="btn primary">Contact Us</a>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 YourAgency – All Rights Reserved</p>
+  © 2026 Network Media Inc. All Rights Reserved
 </footer>
 
-<script src="script.js"></script>
+<!-- ================= SCRIPT ================= -->
+<script>
+const tabs=document.querySelectorAll('.tab');
+const contents=document.querySelectorAll('.content');
+
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    contents.forEach(c=>c.classList.remove('active'));
+
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+
 </body>
 </html>
